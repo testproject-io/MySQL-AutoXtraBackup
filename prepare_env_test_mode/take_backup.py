@@ -143,7 +143,9 @@ class WrapperForBackupTest(Backup):
 
             # Fix for https://github.com/ShahriyarR/MySQL-AutoXtraBackup/issues/229
             # Creating encrypted general tablespace
-            sql_create_tablespace = "create tablespace ts3_enc add datafile 'ts3_enc.ibd' encryption='Y'"
+            # Changed for 2.4.10 release testing
+            # sql_create_tablespace = "create tablespace ts3_enc add datafile 'ts3_enc.ibd' encryption='Y'"
+            sql_create_tablespace = "create tablespace ts3_enc add datafile 'ts3_enc.ibd' encryption='N'"
             RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_create_tablespace)
 
             # Fix for https://github.com/ShahriyarR/MySQL-AutoXtraBackup/issues/268
