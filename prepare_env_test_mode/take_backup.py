@@ -329,7 +329,7 @@ class WrapperForBackupTest(Backup):
                 #                                             sql="select benchmark(9999999, md5(c)) from sysbench_test_db.sbtest{}".format(
                 #                                                 i)))
 
-                sleep(20)
+                sleep(50)
                 self.all_backup()
                     # self.check_kill_process('call_ddl_test')
         except Exception as err:
