@@ -247,17 +247,17 @@ class WrapperForBackupTest(Backup):
 
                 sleep(30)
 
-                sql_virtual_column = "alter table sysbench_test_db.sbtest{} add column json_test_v json generated always as (json_array(k,c,pad)) virtual".format(
-                    i)
-                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_virtual_column)
-                sql_stored_column = "alter table sysbench_test_db.sbtest{} add column json_test_s json generated always as (json_array(k,c,pad)) stored".format(
-                    i)
-                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_stored_column)
-                sql_create_json_column = "alter table sysbench_test_db.sbtest{} add column json_test_index varchar(255) generated always as (json_array(k,c,pad)) stored".format(
-                    i)
-                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_create_json_column)
-                sql_alter_add_index = "alter table sysbench_test_db.sbtest{} add index(json_test_index)".format(i)
-                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_add_index)
+                # sql_virtual_column = "alter table sysbench_test_db.sbtest{} add column json_test_v json generated always as (json_array(k,c,pad)) virtual".format(
+                #     i)
+                # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_virtual_column)
+                # sql_stored_column = "alter table sysbench_test_db.sbtest{} add column json_test_s json generated always as (json_array(k,c,pad)) stored".format(
+                #     i)
+                # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_stored_column)
+                # sql_create_json_column = "alter table sysbench_test_db.sbtest{} add column json_test_index varchar(255) generated always as (json_array(k,c,pad)) stored".format(
+                #     i)
+                # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_create_json_column)
+                # sql_alter_add_index = "alter table sysbench_test_db.sbtest{} add index(json_test_index)".format(i)
+                # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_add_index)
 
                 # sql_alter_tablespace = "alter table sysbench_test_db.sbtest{} tablespace=ts3_enc".format(i)
                 # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_tablespace)
