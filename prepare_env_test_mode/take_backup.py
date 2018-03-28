@@ -240,12 +240,12 @@ class WrapperForBackupTest(Backup):
                 sql_alter_tablespace = "alter table sysbench_test_db.sbtest{} tablespace=out_ts1".format(i)
                 RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_tablespace)
 
-            for i in range(25, 30):
-                # Altering encrypted tables to use encrypted general tablespace
-                sql_encrypt = "alter table sysbench_test_db.sbtest{} encryption='Y'".format(i)
-                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_encrypt)
-
-                sleep(30)
+            # for i in range(25, 30):
+            #     # Altering encrypted tables to use encrypted general tablespace
+            #     sql_encrypt = "alter table sysbench_test_db.sbtest{} encryption='Y'".format(i)
+            #     RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_encrypt)
+            #
+            #     sleep(30)
 
                 # sql_virtual_column = "alter table sysbench_test_db.sbtest{} add column json_test_v json generated always as (json_array(k,c,pad)) virtual".format(
                 #     i)
