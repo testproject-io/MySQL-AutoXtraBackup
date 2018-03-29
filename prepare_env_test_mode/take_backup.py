@@ -259,8 +259,8 @@ class WrapperForBackupTest(Backup):
                 sql_alter_add_index = "alter table sysbench_test_db.sbtest{} add index(json_test_index)".format(i)
                 RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_add_index)
 
-                sql_alter_tablespace = "alter table sysbench_test_db.sbtest{} tablespace=ts3_enc".format(i)
-                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_tablespace)
+                # sql_alter_tablespace = "alter table sysbench_test_db.sbtest{} tablespace=ts3_enc".format(i)
+                # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_tablespace)
 
             # TODO: enable this after fix for https://bugs.launchpad.net/percona-xtrabackup/+bug/1736380
             # for i in range(20, 25):
