@@ -245,8 +245,6 @@ class WrapperForBackupTest(Backup):
                 sql_encrypt = "alter table sysbench_test_db.sbtest{} encryption='Y'".format(i)
                 RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_encrypt)
 
-                sleep(30)
-
                 sql_virtual_column = "alter table sysbench_test_db.sbtest{} add column json_test_v json generated always as (json_array(k,c,pad)) virtual".format(
                     i)
                 RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_virtual_column)
@@ -330,8 +328,6 @@ class WrapperForBackupTest(Backup):
                 #                                             sock="{}/socket.sock".format(self.basedir),
                 #                                             sql="select benchmark(9999999, md5(c)) from sysbench_test_db.sbtest{}".format(
                 #                                                 i)))
-
-                sleep(120)
                 self.all_backup()
                     # self.check_kill_process('call_ddl_test')
         except Exception as err:
