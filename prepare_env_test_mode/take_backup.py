@@ -240,27 +240,27 @@ class WrapperForBackupTest(Backup):
                 sql_alter_tablespace = "alter table sysbench_test_db.sbtest{} tablespace=out_ts1".format(i)
                 RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_tablespace)
 
-            # for i in range(25, 30):
-            #     # Altering encrypted tables to use encrypted general tablespace
-            #     sql_encrypt = "alter table sysbench_test_db.sbtest{} encryption='Y'".format(i)
-            #     RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_encrypt)
-            #
-            #     sleep(30)
+            for i in range(25, 30):
+                # Altering encrypted tables to use encrypted general tablespace
+                sql_encrypt = "alter table sysbench_test_db.sbtest{} encryption='Y'".format(i)
+                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_encrypt)
 
-                # sql_virtual_column = "alter table sysbench_test_db.sbtest{} add column json_test_v json generated always as (json_array(k,c,pad)) virtual".format(
-                #     i)
-                # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_virtual_column)
-                # sql_stored_column = "alter table sysbench_test_db.sbtest{} add column json_test_s json generated always as (json_array(k,c,pad)) stored".format(
-                #     i)
-                # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_stored_column)
-                # sql_create_json_column = "alter table sysbench_test_db.sbtest{} add column json_test_index varchar(255) generated always as (json_array(k,c,pad)) stored".format(
-                #     i)
-                # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_create_json_column)
-                # sql_alter_add_index = "alter table sysbench_test_db.sbtest{} add index(json_test_index)".format(i)
-                # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_add_index)
+                sleep(30)
 
-                # sql_alter_tablespace = "alter table sysbench_test_db.sbtest{} tablespace=ts3_enc".format(i)
-                # RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_tablespace)
+                sql_virtual_column = "alter table sysbench_test_db.sbtest{} add column json_test_v json generated always as (json_array(k,c,pad)) virtual".format(
+                    i)
+                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_virtual_column)
+                sql_stored_column = "alter table sysbench_test_db.sbtest{} add column json_test_s json generated always as (json_array(k,c,pad)) stored".format(
+                    i)
+                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_stored_column)
+                sql_create_json_column = "alter table sysbench_test_db.sbtest{} add column json_test_index varchar(255) generated always as (json_array(k,c,pad)) stored".format(
+                    i)
+                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_create_json_column)
+                sql_alter_add_index = "alter table sysbench_test_db.sbtest{} add index(json_test_index)".format(i)
+                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_add_index)
+
+                sql_alter_tablespace = "alter table sysbench_test_db.sbtest{} tablespace=ts3_enc".format(i)
+                RunBenchmark.run_sql_statement(basedir=self.basedir, sql_statement=sql_alter_tablespace)
 
             # TODO: enable this after fix for https://bugs.launchpad.net/percona-xtrabackup/+bug/1736380
             # for i in range(20, 25):
