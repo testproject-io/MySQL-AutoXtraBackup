@@ -35,7 +35,7 @@ class PartialRecovery(GeneralClass):
                 statement)
             return new_command
         else:
-            command_connection += ' --port={}'
+            command_connection += ' --host={} --port={}'
             command_connection += command_execute
             new_command = command_connection.format(
                 self.mysql,
